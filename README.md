@@ -1,21 +1,21 @@
 ## React study
 
-- JXS
+- ### JXS
   - ReactDOM = React.createElement()
   - { }
-- Element
+- ### Element
   - Document Object Model (DOM)
   - immutable
   - root DOM node
-- Props (like function parameter)
+- ### Props (like function parameter)
   - props in JavaScript Object
   - All React components must act like pure functions with respect to their props
-- Components (Element aggregate)
+- ### Components (Element aggregate)
   - function component VS Class component
   - Rendering
   - Composing components
   - Extracting components
-- State
+- ### State
   - State = JavaScript Object
   - Life Cycle method
     - componentDidMount
@@ -24,3 +24,5 @@
       - setState()
       - forceUpdate()
     - componentWillUnmount
+- ### Hook
+  - useState : _ex)const [변수명, set함수명] = useState(초깃값);
