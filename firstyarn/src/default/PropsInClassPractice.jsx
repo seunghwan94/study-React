@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ClassPractice extends Component {
+class PropsInClassPractice extends Component {
   
   render() {
     return (
@@ -12,4 +12,4 @@ class ClassPractice extends Component {
   }
 }
 
-export default ClassPractice;
+export default PropsInClassPractice;

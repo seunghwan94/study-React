@@ -6,19 +6,25 @@ import reportWebVitals from './reportWebVitals';
 import First from './component/First';
 import Props from './default/Props';
 import ClockPractice from './practice/ClockPractice';
+import ComponentPractice from './default/ComponentPractice';
+import ComponentExtracting from './default/ComponentExtracting';
+import ReplyList from './practice/ReplyList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-setInterval(()=>{
+// setInterval(()=>{
     root.render(
     <React.StrictMode>
       <App />
       <First />
       <Props />
       <ClockPractice />
+      <ComponentPractice name="test" />
+      <ComponentExtracting author={{ name:"객체의객체" , avatarUrl:"https://placehold.co/60x40" }} text="sample text" date={new Date()} />
+      <ReplyList />
     </React.StrictMode>
   );  
-})
+// }, 1000)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

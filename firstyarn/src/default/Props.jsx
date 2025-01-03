@@ -1,6 +1,6 @@
 import React from 'react';
 import PropsPractice from './PropsPractice';
-import ClassPractice from './ClassPractice';
+import ClassPractice from './PropsInClassPractice';
 
 
 const result = [
