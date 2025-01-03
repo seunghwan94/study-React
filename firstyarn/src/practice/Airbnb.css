@@ -1,0 +1,29 @@
+.main-contain{
+  margin:auto;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.img{
+  border-radius: 5% 5% 0 0;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-size: 100%;
+}
+
+.airbnb-card {
+  border: 3px solid gray;
+  margin: 10px;
+  border-radius: 5%;
+}
+h3, p{
+  margin:0
+}
+.text {
+  border-radius: 0 0 5% 5%;
+  padding: 10px 0 40px 10px;
+}

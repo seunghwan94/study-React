@@ -27,7 +27,7 @@ const styles ={
     fontWeight:"bold",
   },
   commentText: {
-    color: "black",
+    color: "blue",
     fontSize: 16,
   }
 
@@ -44,7 +44,7 @@ const Reply = (props) => {
       </div>
       <div style={contentContainer}>
         <span style={nameText}>{name}</span>
-        <span style={commentText}>{comment}</span>
+        <span style={{...commentText, color:"blue"}} >{comment}</span>
       </div>
     </div>
   );
