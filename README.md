@@ -25,4 +25,14 @@
       - forceUpdate()
     - componentWillUnmount
 - ### Hook
-  - useState : _ex)const [변수명, set함수명] = useState(초깃값);
+
+  ※ Promise, Async/Await, CORS 공부하고 진행할 것
+
+  - ### useState : reRendering
+    ex_)const [변수명, set함수명] = useState(초깃값);
+  - useEffect : 서버에서 값 받아올때 많이 사용
+    
+    ex_) useEffect(Effect function, Array of Dependencies);
+  - useMemo
+  - useCallback
+  - useRef
