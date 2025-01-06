@@ -13,15 +13,20 @@ import AirbnbList from './practice/AirbnbList';
 import StateLifeCycleList from './default/StateLifeCycleList';
 import UseState from './default/UseState';
 import ArrayFruits from './practice/ArrayFruits';
-import ArrayFruits2 from './practice/ArrayFruits2';
+import UseEffect from './default/UseEffect';
+import Event from './default/Event';
+import EventTarget from './default/EventTarget';
+import PromiseAsyncAwait from './default/PromiseAsyncAwait';
+import RenderLogin from './practice/RenderLogin';
+import ListAndComponent from './practice/ListAndComponent';
+import ListAndComponentkey from './default/ListAndComponentkey';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // setInterval(()=>{
     root.render(
-    <React.StrictMode>
-      <ArrayFruits2 />
-      <App />
+    <>
+      {/* <App />
       <First />
       <Props />
       <ClockPractice />
@@ -32,7 +37,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       <StateLifeCycleList />
       <UseState />
       <ArrayFruits />
-    </React.StrictMode>
+      <ArrayFruits2 /> */}
+      <UseEffect />
+      <Event />
+      <EventTarget />
+      <PromiseAsyncAwait />
+      <RenderLogin />
+      <ListAndComponent numbers={[1,2,3,4,5]}/>
+      <ListAndComponentkey />
+    </>
   );  
 // }, 1000)
 
