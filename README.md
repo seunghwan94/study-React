@@ -59,15 +59,59 @@ fetch, axios
   - key : reRendering 하기 위해 사용
 
 ## Library
-- axios
+- bootstrap
   ```
-  yarn add axios
+  yarn add bootstrap react-bootstrap bootstrap-icons
+
+  import 'bootstrap/dist/css/bootstrap.min.css';
   ```
 - react router dom
   ```
   yarn add react-router-dom
+
+  // 사용법
+  function App() {
+    return (
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Index/>} />
+          <Route path="/posts" element={<Posts/>}/>
+          <Route path="/posts/:id" element={<PostDetail/>}/>
+        </Routes>
+      </BrowserRouter >
+    );
+  }
   ```
-- bootstrap
+- axios
   ```
-  yarn add bootstrap react-bootstrap bootstrap-icons
+  yarn add axios
+
+  // 사용 방법 
+  const [post, setPost] = useState(); // 데이터
+  const [loading, setLoading] = useState(true); // 로딩
+  const [error, setError] = useState(null); // 에러
+  
+  useEffect(()=>{
+    const get = async () =>{
+      try{
+        const resp = await axios.get("URL");
+        setPost(resp.data)
+      }catch(err){
+        setError(err);
+      }finally{
+        setLoading(false);
+      }
+    }
+    get();
+  },[])
+  
+  // 로딩
+  if(loading) return <>Loading...</>;
+  
+  // 에러
+  if (error) return return <>{error}</>;
+
+  // 데이터 처리
+  return <>post</>
   ```
