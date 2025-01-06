@@ -36,3 +36,16 @@
   - useMemo
   - useCallback
   - useRef
+
+##### React 비동기 KeyWord
+```
+CORS 처리 (Origin issue) / security
+Re render 조건 : state, props 변화 감지
+useEffect (componentWillUnmount 실행하기 위해 사용)
+js / promise, async await (비동기를 동기처리하기 위해)
+fetch, axios
+```
+
+- ### Event
+- ### Conditional Rendering
+  -  
