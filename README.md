@@ -47,5 +47,27 @@ fetch, axios
 ```
 
 - ### Event
+  - onClick={(e) => console.log(e)}
+  - e.target
+  - e.currentTarget
 - ### Conditional Rendering
-  -  
+  - Element Variables
+  - Inline Conditions
+  - Component Rendering Null
+- ### List / Key
+  - map()
+  - key : reRendering 하기 위해 사용
+
+## Library
+- axios
+  ```
+  yarn add axios
+  ```
+- react router dom
+  ```
+  yarn add react-router-dom
+  ```
+- bootstrap
+  ```
+  yarn add bootstrap react-bootstrap bootstrap-icons
+  ```
