@@ -1,21 +1,21 @@
-## React study
+# React study
 
-- ### JXS
+## JXS
   - ReactDOM = React.createElement()
   - { }
-- ### Element
+## Element
   - Document Object Model (DOM)
   - immutable
   - root DOM node
-- ### Props (like function parameter)
+## Props (like function parameter)
   - props in JavaScript Object
   - All React components must act like pure functions with respect to their props
-- ### Components (Element aggregate)
+## Components (Element aggregate)
   - function component VS Class component
   - Rendering
   - Composing components
   - Extracting components
-- ### State
+## State
   - State = JavaScript Object
   - Life Cycle method
     - componentDidMount
@@ -24,12 +24,12 @@
       - setState()
       - forceUpdate()
     - componentWillUnmount
-- ### Hook
+## Hook
 
   ※ Promise, Async/Await, CORS 공부하고 진행할 것
 
-  - ### useState : reRendering
-    ex_)const [변수명, set함수명] = useState(초깃값);
+### useState : reRendering
+  ex_)const [변수명, set함수명] = useState(초깃값);
   - useEffect : 서버에서 값 받아올때 많이 사용
     
     ex_) useEffect(Effect function, Array of Dependencies);
@@ -37,7 +37,7 @@
   - useCallback
   - useRef
 
-##### React 비동기 KeyWord
+### React 비동기 KeyWord
 ```
 CORS 처리 (Origin issue) / security
 Re render 조건 : state, props 변화 감지
@@ -46,18 +46,22 @@ js / promise, async await (비동기를 동기처리하기 위해)
 fetch, axios
 ```
 
-- ### Event
+## Event
   - onClick={(e) => console.log(e)}
   - e.target
   - e.currentTarget
-- ### Conditional Rendering
+## Conditional Rendering
   - Element Variables
   - Inline Conditions
   - Component Rendering Null
-- ### List / Key
+## List / Key
   - map()
   - key : reRendering 하기 위해 사용
-
+## Form
+- event.preventDefault()
+- onSubmit, onClick, onChange, onFocus, onBlur
+- Controlled Components
+- UnControlled Component
 ## Library
 - bootstrap
   ```
