@@ -20,6 +20,9 @@ import PromiseAsyncAwait from './default/PromiseAsyncAwait';
 import RenderLogin from './practice/RenderLogin';
 import ListAndComponent from './practice/ListAndComponent';
 import ListAndComponentkey from './default/ListAndComponentkey';
+import FormControllerComponent from './default/FormControllerComponent';
+import FormController from './practice/FormController';
+import Calculator from './default/Calculator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -38,13 +41,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       <UseState />
       <ArrayFruits />
       <ArrayFruits2 /> */}
-      <UseEffect />
+      {/* <UseEffect />
       <Event />
       <EventTarget />
       <PromiseAsyncAwait />
       <RenderLogin />
       <ListAndComponent numbers={[1,2,3,4,5]}/>
-      <ListAndComponentkey />
+      <ListAndComponentkey /> */}
+      {/* <FormControllerComponent /> */}
+      {/* <FormController /> */}
+      <Calculator />
     </>
   );  
 // }, 1000)

@@ -1,8 +1,10 @@
 import React from 'react';
 import {Container, Nav, Navbar, } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <>
       {/* 
@@ -12,13 +14,13 @@ const Header = () => {
       <Navbar bg="light" expand="lg" className='mb-4' sticky='top'>
       <hr className='w-50'/>
         <Container>
-          <Navbar.Brand as={Link} to="/">React Sample Post</Navbar.Brand>
-          <Nav variant="pills" defaultActiveKey="link-0" className='me-auto'>
+          <Navbar.Brand as={Link} to="/" >React Sample Post</Navbar.Brand>
+          <Nav variant="pills" activeKey={location.pathname} className="me-auto" defaultActiveKey="/">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" eventKey="link-0" >Home</Nav.Link>
+              <Nav.Link as={Link} to="/" eventKey="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to="/posts" eventKey="link-1">Posts</Nav.Link>
+              <Nav.Link as={Link} to="/posts" eventKey="/posts">Posts</Nav.Link>
             </Nav.Item>
           </Nav>
         </Container>
