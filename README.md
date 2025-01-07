@@ -1,29 +1,51 @@
 # React study
 
 ## JXS
-  - ReactDOM = React.createElement()
-  - { }
+- ReactDOM = React.createElement()
+- { }
+  
 ## Element
-  - Document Object Model (DOM)
-  - immutable
-  - root DOM node
+- Document Object Model (DOM)
+- immutable
+- root DOM node
+  
 ## Props (like function parameter)
-  - props in JavaScript Object
-  - All React components must act like pure functions with respect to their props
+- props in JavaScript Object
+- All React components must act like pure functions with respect to their props
+  
 ## Components (Element aggregate)
-  - function component VS Class component
-  - Rendering
-  - Composing components
-  - Extracting components
+- function component VS Class component
+- Rendering
+- Composing components
+- Extracting components
+
+
+  
 ## State
-  - State = JavaScript Object
-  - Life Cycle method
-    - componentDidMount
-    - componentDidUpdate
-      - New props
-      - setState()
-      - forceUpdate()
-    - componentWillUnmount
+State = JavaScript Object
+### Life Cycle method
+| Class Component Method   | Functional Component (Hooks)                                | 설명                                    |
+|---------------------------|------------------------------------------------------------|-----------------------------------------|
+| `componentDidMount`      | `useEffect(() => { ... }, [])`                              | 컴포넌트가 처음 마운트될 때 실행       |
+| `componentDidUpdate`     | `useEffect(() => { ... }, [dependencies])`                 | 특정 `dependencies`가 변경될 때 실행   |
+| - New props              | -                                                          | 새로운 `props`가 전달될 때             |
+| - setState()             | -                                                          | `state` 업데이트로 인해 렌더링될 때    |
+| - forceUpdate()          | -                                                          | 강제로 업데이트가 호출될 때            |
+| `componentWillUnmount`   | `useEffect(() => { return () => { ... }; }, [])`           | 컴포넌트가 언마운트되기 직전에 실행    |
+
+
+
+## State Shared
+### Props Drilling 막는 방법
+- useState
+- Context API
+- Redux, Recoil, Mobx
+- React Query
+### 상태 관리 유형 예시
+- Global State : 사용자 인증 정보
+- Cross Component State : Theme 설정
+- Local State : Modal 열림/닫힘
+   
 ## Hook
 
   ※ Promise, Async/Await, CORS 공부하고 진행할 것
@@ -47,16 +69,16 @@ fetch, axios
 ```
 
 ## Event
-  - onClick={(e) => console.log(e)}
-  - e.target
-  - e.currentTarget
+- onClick={(e) => console.log(e)}
+- e.target
+- e.currentTarget
 ## Conditional Rendering
-  - Element Variables
-  - Inline Conditions
-  - Component Rendering Null
+- Element Variables
+- Inline Conditions
+- Component Rendering Null
 ## List / Key
-  - map()
-  - key : reRendering 하기 위해 사용
+- map()
+- key : reRendering 하기 위해 사용
 ## Form
 - event.preventDefault()
 - onSubmit, onClick, onChange, onFocus, onBlur
