@@ -23,6 +23,8 @@ import ListAndComponentkey from './default/ListAndComponentkey';
 import FormControllerComponent from './default/FormControllerComponent';
 import FormController from './practice/FormController';
 import Calculator from './default/Calculator';
+import Containment from './default/Containment';
+import CustomHook from './default/CustomHook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -50,7 +52,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       <ListAndComponentkey /> */}
       {/* <FormControllerComponent /> */}
       {/* <FormController /> */}
-      <Calculator />
+      {/* <Calculator /> */}
+      {/* <Containment /> */}
+      <CustomHook />
     </>
   );  
 // }, 1000)
