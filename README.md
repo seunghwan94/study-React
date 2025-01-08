@@ -47,9 +47,14 @@ State = JavaScript Object
 - Local State : Modal 열림/닫힘
    
 ## Hook
-  Proxy Patterns 개념 활용한 Observer Patterns (State Patterns)
-  
-  ※ Promise, Async/Await, CORS 공부하고 진행할 것
+####  Proxy Patterns 개념 활용한 Observer Patterns (State Patterns)
+```
+Hook Rule
+1. Top Level 에서 호출
+2. for, if 등 안에서 호출 X
+3. rendering 될 때마다 같은 순서로 호출 되어야 한다.
+```
+※ Promise, Async/Await, CORS 공부하고 진행할 것
 
 ### useState : reRendering
 ```
@@ -85,6 +90,50 @@ State = JavaScript Object
     </>
   )
 ```
+### Custom Hook
+공용 코드 만들기
+```
+## Role
+1. use로 시작해야 된다.
+2. 공용 공간에서 사용하면 편하다.
+
+
+import React, { useEffect, useState } from 'react';
+
+const MAX_CNT= 10;
+
+// 원래는 따로 페이지 빼야됨 custom hook
+const useCnt = (val) => {
+  const [cnt, setCnt] = useState(val);
+  const inc = () => setCnt(cnt => cnt + 1);
+  const dec = () => setCnt(cnt => Math.max(cnt - 1, 0));
+
+  return [cnt, inc, dec];
+}
+
+const CustomHook = () => {
+  const [is, setIs] = useState(false);
+  const [cnt, inc, dec] = useCnt(0);
+
+  useEffect(() => {
+    setIs(cnt >= MAX_CNT);
+  },[cnt]);
+
+  return (
+    <div style={{padding: 16}}>
+      <p>{`총 ${cnt}명 수용했습니다.`}</p>
+      <button onClick={inc} disabled={is}>입장</button>
+      <button onClick={dec}>퇴장</button>
+      {is && <p style={{color: "red"}}>정원이 가득 찼습니다.</p>}
+    </div>
+  )
+}
+
+export default CustomHook;
+
+```
+### UseContext
+### UseReducer
 
 ### React 비동기 KeyWord
 ```
@@ -116,7 +165,7 @@ fetch, axios
 - Containment
   - props.children
 - Specialization
-## 
+
 
 
 ## Library
