@@ -47,17 +47,44 @@ State = JavaScript Object
 - Local State : Modal 열림/닫힘
    
 ## Hook
-
+  Proxy Patterns 개념 활용한 Observer Patterns (State Patterns)
+  
   ※ Promise, Async/Await, CORS 공부하고 진행할 것
 
 ### useState : reRendering
-  ex_)const [변수명, set함수명] = useState(초깃값);
-  - useEffect : 서버에서 값 받아올때 많이 사용
-    
-    ex_) useEffect(Effect function, Array of Dependencies);
+```
+  const [변수명, set함수명] = useState(초깃값);
+```
+### useEffect : 서버에서 값 받아올때 많이 사용 
+```
+  useEffect(Effect function, Array of Dependencies);
+```
+### Memoization
+- useMemo VS useCallback (성능향상을 위해 사용 - 최적화 (Memoized Value에 따라 사용))
   - useMemo
+    - return value;
+```
+  useMemo(() => computeExpensiveValue(a, b));
+```
   - useCallback
-  - useRef
+    - return function;
+```
+  useCallback(() => {doSometing(a, b)}, [a, b]);
+```
+### useRef
+  - focus()
+  - re render X
+  - .current
+```
+  const input = useRef(초깃값);
+  const click = () => input.current.focus();
+  return (
+    <>
+      <input ref={input} type="text" />
+      <button onClick={click}>Click</button>
+    </>
+  )
+```
 
 ### React 비동기 KeyWord
 ```
@@ -84,6 +111,14 @@ fetch, axios
 - onSubmit, onClick, onChange, onFocus, onBlur
 - Controlled Components
 - UnControlled Component
+## Composition
+조합기법
+- Containment
+  - props.children
+- Specialization
+## 
+
+
 ## Library
 - bootstrap
   ```
