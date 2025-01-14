@@ -133,6 +133,21 @@ export default CustomHook;
 
 ```
 ### UseContext
+- React.createContext();
+```
+  React.createContext("light");
+```
+- Provider
+```
+  <ThemeContext.Provider value = "dark"/>
+```
+- Consumer
+```
+  <ThemeContext.Consumer>
+    {value => <p theme={value}>테마변경</p>}
+  </ThemeContext.Consumer>
+```
+
 ### UseReducer
 
 ### React 비동기 KeyWord
