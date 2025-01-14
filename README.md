@@ -132,20 +132,28 @@ const CustomHook = () => {
 export default CustomHook;
 
 ```
-### UseContext
+
+### Context (broadcast)
 - React.createContext();
 ```
-  React.createContext("light");
+  const ThemeContext = React.createContext("light");
 ```
-- Provider
+- Context.Provider() : (radio)
 ```
   <ThemeContext.Provider value = "dark"/>
 ```
-- Consumer
+- Context.Consumer() : (radio subscriber)
 ```
   <ThemeContext.Consumer>
     {value => <p theme={value}>테마변경</p>}
   </ThemeContext.Consumer>
+```
+- useContext()
+```
+  functuion MyComponent(props){
+    const value = useContext(MyContext);
+    return(...);
+  }
 ```
 
 ### UseReducer
