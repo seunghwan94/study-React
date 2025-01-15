@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
 
 const List = () => {
@@ -9,7 +9,7 @@ const List = () => {
 
   // effect >> api호출
   useEffect(() => {
-    req('get','board/list');
+    req('get','note/listall');
   }, [req]);
 
   if(error) return <div><h1>에러 발생</h1></div>;
@@ -19,7 +19,7 @@ const List = () => {
     <div>
       <button onClick={() => navigate('/write')}>글쓰기</button>
       <ul>
-        {data.dtoList.map(b => <li key={b.bno}>{b.title}</li>)}
+        {data && data.map(b => <li key={b.num}><Link to={`/view/${b.num}`}>{b.title}</Link></li>)}
       </ul>
     </div>
   );
