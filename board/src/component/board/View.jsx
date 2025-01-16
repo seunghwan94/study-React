@@ -32,6 +32,13 @@ const Write = () => {
       <p>{data.content}</p>
       <p>{data.memberEmail}</p>
       <Link to={`/modify/${num}`} ><button>수정</button></Link>
+
+      <div>
+        <h3>attachDtos : {data.attachDtos.length}</h3>
+        <ul>
+          {data.attachDtos.map(a => <li key={a.uuid}><Link to={a.url}>{a.origin}</Link></li>)}
+        </ul>
+      </div>
       <button onClick={handleDelete}>삭제</button>
     </div>
   );

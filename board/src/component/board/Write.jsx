@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
 import { useAuth } from '../../hooks/AuthContext';
 
 const Write = () => {
-  const { email, token } = useAuth();
+  const { email } = useAuth();
   const navigate = useNavigate();
   const { req } = useAxios();
-
+  const [uploaded, setUploaded] = useState([]);
   const [ board, setBoard ] = useState({
     title:'',
     content:'',
-    memberEmail: email});
+    memberEmail: email,
+    attachDtos: []
+  });
 
   const handleChange = e => {
     const {name, value} = e.target;
@@ -20,41 +22,35 @@ const Write = () => {
 
   const handleSubmit = async e => {
     try{
-      const resp = await req('post', 'note', board);
+      console.log(board);
+      const resp = await req('post', 'note', {...board, attachDtos : uploaded});
       console.log(resp);
-      
     }catch(error){
       console.error("실패", error.message);
     }
-    // alert("글쓰기 성공");
+    alert("글쓰기 성공");
     navigate("/list");
   }
 
   const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
+    const files = e.target.files;
+    if (!files) return;
     
-    if (!file) return;
-
     const formData = new FormData();
-    formData.append('file', file);
+    for(let i = 0; i < files.length; i++){
+      formData.append('file', files[i]);
+    }
 
     try {
-      const headers = {'Authorization': `Bearer ${token}`}
-      const response = await fetch("http://localhost:9999/api/v1/file/upload", {
-        method: "POST",
-        body: formData,
-        headers
-      });
-  
-      const result = await response.json();
-      if (result.status === "success") {
-        console.log("File uploaded successfully:", result.data);
-      } else {
-        console.error("Upload failed:", result.message);
-      }
+      const result = await req("post", "file/upload", formData, {'Content-Type' : 'multipart/form-data'})
+      console.log(result);
+      setUploaded([...uploaded, ...result]);
+
+
     } catch (error) {
       console.error("Error during upload:", error);
     }
+    e.target.value = "";
   };
 
   return (
@@ -64,13 +60,16 @@ const Write = () => {
         e.preventDefault();
         handleSubmit();
         console.log(board);
-      }}>
+      }} encType=''>
         <input type='text' name="title" value={board.title} onChange={handleChange}/>
         <input type='text' name="content" value={board.content} onChange={handleChange}/>
         <input type='text' name="memberEmail" value={board.memberEmail} onChange={handleChange}/>
         <button>클릭</button>
-        <input type='file' onChange={handleFileUpload}/>
+        <input type='file' onChange={handleFileUpload} multiple />
       </form>
+      <ul>
+        {uploaded.map(u => <li key={u.uuid}><Link to={u.url}> {u.origin} </Link><button onClick={e => setUploaded( uploaded.filter(file => file.uuid !== e.currentTarget.dataset.uuid)) } data-uuid={u.uuid}>삭제</button></li>)}
+      </ul>
     </div>
   );
 }
