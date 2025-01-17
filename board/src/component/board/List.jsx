@@ -19,7 +19,7 @@ const List = () => {
     <div>
       <button onClick={() => navigate('/write')}>글쓰기</button>
       <ul>
-        {data && data.map(b => <li key={b.num}><Link to={`/view/${b.num}`}>{b.title}</Link></li>)}
+        {data && data.map(b => <li key={b.num}><Link to={`/view/${b.num}`}>{b.title} :: like {b.likesCnt} :: Attach {b.attachCnt}</Link></li>)}
       </ul>
     </div>
   );
